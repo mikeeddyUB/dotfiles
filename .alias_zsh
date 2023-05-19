@@ -1,0 +1,40 @@
+# MYCOMMAND=$(base64 -w0 script.sh)
+# ssh user@remotehost "echo $MYCOMMAND | base64 -d | sudo bash"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias ......="cd ../../../../.."
+alias .......="cd ../../../../../.."
+
+alias gerp='grep'
+alias gr='rg'
+
+alias nmp=npm
+
+alias pythong=python
+
+alias grep="grep -v 'grep --color=always' | grep --color=always "
+alias b="cd - > /dev/null"
+alias c="clear"
+alias cls="clear;ls -lahG"
+
+alias rgnt='rg -g "!*Test.js" -g "!*-spec.js" -g "!*.test.ts" -g "!*Mock.js" -g "!*-spec.ts" -g "!*.test.tsx" -g "!*_test.go"'
+alias rgt='rg -g "*Test.js" -g "*-spec.js" -g "*.test.ts" -g "*Mock.js"'
+
+# alias ip="grep -oE '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])'"
+alias ip="ifconfig | grep \"inet \" | grep -Fv 127.0.0.1 | awk '{print $2}'"
+
+alias pstatus="pg_ctl -D /usr/local/var/postgres status"
+
+alias hg='history | grep'
+
+alias tstamp='date +%Y-%m-%d_%H%M%S'
+
+alias ungzip='gzip -d '
+
+
+alias latest='/usr/local/node-v14.16.1/bin/latest-version'
+
+

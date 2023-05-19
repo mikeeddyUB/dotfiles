@@ -1,0 +1,23 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!.zshrc
+!.alias_zsh
+!.gitconfig
+!.sqliterc
+
+
+
+
+
+
+# etc...
+
+# ...even if they are in subdirectories
+# !*/
+
+
+
+

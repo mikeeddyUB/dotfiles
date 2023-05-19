@@ -1,0 +1,71 @@
+[alias]
+	ass = add
+	co = checkout
+	st = status -s
+        diffc = diff --cached
+	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %G? %C(bold blue)<%an> %C(cyan)%G? %Creset%n' --date=relative
+	lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+	lgb2 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %G? %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+	showtool = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
+	cherry-pit = "!f() { git rebase -p --onto $1^ $1; }; f"
+	brlocal = "for-each-ref --count=20 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate)%(color:reset))'"
+	brlocalall = "for-each-ref --count=1000 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate)%(color:reset))'"
+        brremote = "for-each-ref --count=20 --sort=-committerdate refs/remotes/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+	brremoteall = "for-each-ref --count=100 --sort=-committerdate refs/remotes/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
+	stashfiles = "!f() { git show -p stash@{$1} --name-only; }; f"
+	stashfiles2 = "!f() { git show -p stash@{$1}; }; f"
+	stashdetails = "stash list --format='%gd (%cr): %gs'"
+	comparebranches = "!f() { git log --left-right --graph --cherry-pick --oneline $1...origin/$1; }; f"
+#	diffcode = "git diff --name-only origin/766-right-panel-export..766-right-panel-export -- ':(exclude)*-spec.js' ':(exclude)*.json' ':(exclude)*.less' ':(exclude)*.svg'"
+	magic = "!f() { git clean -fdx; core clean -np; npm ci; core ci; }; f"
+	amend = commit --amend --no-edit
+	stash-unstaged = stash --keep-index -u
+	stash-staged = "!f() { git stash -- $(git diff --staged --name-only); }; f"
+	b = checkout @{-1}
+        bb = checkout @{-2}
+	tree = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(blue)- %an, %ar%Creset'
+	bazel = "show -s --date=\"format:%z\" --pretty='format:%C(auto)    commit = \"%H\",%n    shallow_since = \"%at %ad\",' HEAD"
+        cmomit = "commit"
+	cm = "commit"
+	fcm = "commit --no-verify"
+        showlast = "show HEAD^..HEAD"
+        showlastfiles = "show HEAD^..HEAD --name-only"
+	colock = "!f() { git co -- package-lock.json **/package-lock.json; }; f"
+	cob = "checkout -b"
+	fml="restore '**/package-lock.json' package-lock.json"
+	local-branches2 = "!git branch --format '%(refname:short) %(upstream:short) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | awk '{if (!$2) print $1;}'"
+	local-branches = "!git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'"
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+
+[branch "master"]
+	mergeoptions = --ff-only
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = diffmerge $LOCAL $REMOTE
+[merge]
+	tool = diffmerge
+[mergetool "diffmerge"]
+	trustExitCode = true
+	cmd = /usr/local/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" -t1 "Code_to_rebase_under" -t2 "Result" -t3 "Current_Branch"
+
+[difftool]
+	prompt = false
+[pull]
+	rebase = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[push]
+	default = current
+[init]
+	defaultBranch = main

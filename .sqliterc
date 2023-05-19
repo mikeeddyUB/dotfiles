@@ -1,0 +1,4 @@
+.headers on
+.mode columns
+.explain auto
+.timer on
