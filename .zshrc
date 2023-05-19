@@ -103,3 +103,6 @@ source $ZSH/oh-my-zsh.sh
 
 source .zshrc_custom
 
+PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ ) %{$fg[cyan]%}%~%{$reset_color%}"
+PROMPT+=' $(git_prompt_info)'
+
