@@ -69,3 +69,5 @@
 	default = current
 [init]
 	defaultBranch = main
+[core]
+	pager = less -FX

@@ -38,3 +38,6 @@ alias ungzip='gzip -d '
 alias latest='/usr/local/node-v14.16.1/bin/latest-version'
 
 
+source ~/.alias_mac
+
+
