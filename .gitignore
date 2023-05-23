@@ -9,7 +9,7 @@
 !.gitconfig
 !.sqliterc
 !.vscode/
-!.vscode/*
+!.vscode/keybindings.json
 
 
 
