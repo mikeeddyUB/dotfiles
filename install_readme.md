@@ -45,4 +45,15 @@ Pair bluetooth mouse
 
 Install flux
 
+set up gpg keys
+
+install chrome/ff plugins
+install firefox containers stuff
+
+install zoom
+update zoom settings
+
+copy over vscode shortcut
+
+
 
