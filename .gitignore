@@ -10,7 +10,8 @@
 !.sqliterc
 !.vscode/
 !.vscode/keybindings.json
-
+!.sqliterc
+!.vimrc
 
 
 
