@@ -37,6 +37,11 @@ alias ungzip='gzip -d '
 
 alias latest='/usr/local/node-v14.16.1/bin/latest-version'
 
+alias lbalias='cat ~/howto/lockbox_aliases | tr -d "\n";echo "\n"'
+
+lbcopy () {
+    echo `lbalias` | pbcopy
+}
 
 source ~/.alias_mac
 
