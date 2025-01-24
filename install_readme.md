@@ -52,8 +52,20 @@ install firefox containers stuff
 
 install zoom
 update zoom settings
+ - always mute mic/hide video
 
-copy over vscode shortcut
+copy over vscode shortcuts
+
+configure git globally
+ - git config --global user.email "michael.eddy@tanium.com"
+ - git config --global user.name "Michael Eddy"
+
+set up ssh config for daily labs
+set infinite scrollback for iterm
+
+copy over repl config file
+
+add in vscode plugins
 
 
 

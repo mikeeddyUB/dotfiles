@@ -7,7 +7,8 @@
 	lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
 	lgb2 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %G? %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
 	showtool = "!showci () { rev=${1:-HEAD}; git difftool $rev~1 $rev; }; showci $1"
-	cherry-pit = "!f() { git rebase -p --onto $1^ $1; }; f"
+	cherry-pitold = "!f() { git rebase -p --onto $1^ $1; }; f"
+        cherry-pit = "!f() { git rebase --rebase-merges --onto $1^ $1; }; f"
 	brlocal = "for-each-ref --count=20 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate)%(color:reset))'"
 	brlocalall = "for-each-ref --count=1000 --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate)%(color:reset))'"
         brremote = "for-each-ref --count=20 --sort=-committerdate refs/remotes/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'"
@@ -15,6 +16,7 @@
 	stashfiles = "!f() { git show -p stash@{$1} --name-only; }; f"
 	stashfiles2 = "!f() { git show -p stash@{$1}; }; f"
 	stashdetails = "stash list --format='%gd (%cr): %gs'"
+        stashgrep = "!f() { for i in `git stash list --format=\"%gd\"` ; do git stash show -p $i | grep -H --label=\"$i\" \"$@\" ; done ; }; f"
 	comparebranches = "!f() { git log --left-right --graph --cherry-pick --oneline $1...origin/$1; }; f"
 #	diffcode = "git diff --name-only origin/766-right-panel-export..766-right-panel-export -- ':(exclude)*-spec.js' ':(exclude)*.json' ':(exclude)*.less' ':(exclude)*.svg'"
 	magic = "!f() { git clean -fdx; core clean -np; npm ci; core ci; }; f"
@@ -35,6 +37,8 @@
 	fml="restore '**/package-lock.json' package-lock.json"
 	local-branches2 = "!git branch --format '%(refname:short) %(upstream:short) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | awk '{if (!$2) print $1;}'"
 	local-branches = "!git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'"
+        rs = "!git restore --staged"
+        ru = "!git restore"
 
 [color]
 	diff = auto
