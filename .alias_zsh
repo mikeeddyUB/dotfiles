@@ -20,8 +20,11 @@ alias b="cd - > /dev/null"
 alias c="clear"
 alias cls="clear;ls -lahG"
 
-alias rgnt='rg -g "!*Test.js" -g "!*-spec.js" -g "!*.test.ts" -g "!*Mock.js" -g "!*-spec.ts" -g "!*.test.tsx" -g "!*_test.go"'
-alias rgt='rg -g "*Test.js" -g "*-spec.js" -g "*.test.ts" -g "*Mock.js"'
+# works
+# alias rgnt='rg -g "!*Test.js" -g "!*-spec.js" -g "!*.test.ts" -g "!*Mock.js" -g "!*-spec.ts" -g "!*.test.tsx" -g "!*_test.go" -g "!*test*" -g "!*mocks*"'
+alias rgnt='rg -g "!*Test.js" -g "!*-spec.js" -g "!*.spec.js" -g "!*.test.ts" -g "!*Mock.js" -g "!*-spec.ts" -g "!*.test.tsx" -g "!*_test.go" -g "!*test*" -g "!*mocks*"'
+
+alias rgt='rg -g "*Test.js" -g "*spec.js" -g "*.test.ts" -g "*Mock.js"'
 
 # alias ip="grep -oE '((1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])\.){3}(1?[0-9][0-9]?|2[0-4][0-9]|25[0-5])'"
 alias ip="ifconfig | grep \"inet \" | grep -Fv 127.0.0.1 | awk '{print $2}'"
@@ -34,15 +37,12 @@ alias tstamp='date +%Y-%m-%d_%H%M%S'
 
 alias ungzip='gzip -d '
 
+alias gitp='git'
+alias gitd='git'
 
 alias latest='/usr/local/node-v14.16.1/bin/latest-version'
 
-alias lbalias='cat ~/howto/lockbox_aliases | tr -d "\n";echo "\n"'
+alias berw=brew
 
-lbcopy () {
-    echo `lbalias` | pbcopy
-}
-
-source ~/.alias_mac
-
+alias k=kubectl
 

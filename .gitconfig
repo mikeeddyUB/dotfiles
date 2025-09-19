@@ -2,7 +2,12 @@
 	ass = add
 	co = checkout
 	st = status -s
-        diffc = diff --cached
+	stu = status -uno
+	ull = pull
+	ush = push
+	iff = diff
+	iffc = diffc
+	diffc = diff --cached
 	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %G? %C(bold blue)<%an> %C(cyan)%G? %Creset%n' --date=relative
 	lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
 	lgb2 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %G? %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
@@ -22,6 +27,7 @@
 	magic = "!f() { git clean -fdx; core clean -np; npm ci; core ci; }; f"
 	amend = commit --amend --no-edit
 	stash-unstaged = stash --keep-index -u
+	unstage = restore --staged
 	stash-staged = "!f() { git stash -- $(git diff --staged --name-only); }; f"
 	b = checkout @{-1}
         bb = checkout @{-2}
@@ -39,6 +45,8 @@
 	local-branches = "!git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'"
         rs = "!git restore --staged"
         ru = "!git restore"
+        blam = "!f() { echo $'     _.-^^---....,,--       \n _--                  --_  \n<                        >)\n|                         | \n \\._                   _./  \n    ```--. . , : .--\\'\\'\\'       \n          | |   |             \n       .-=||  | |=-.   \n       `-#$%&%$#=-\\'   \n          | ;  :|     \n _____.,-#%&$@%#&#~,._____'; }; f"
+
 
 [color]
 	diff = auto
@@ -58,7 +66,10 @@
 	tool = diffmerge
 [mergetool "diffmerge"]
 	trustExitCode = true
-	cmd = /usr/local/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" -t1 "Code_to_rebase_under" -t2 "Result" -t3 "Current_Branch"
+        # rebase
+	cmd = /opt/homebrew/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" -t1 "Code_to_rebase_under" -t2 "Result" -t3 "Current_Branch"
+        # merge
+        # cmd = /opt/homebrew/bin/diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\" -t1 "Current_Branch" -t2 "Result" -t3 "Code_to_merge_on_top"
 
 [difftool]
 	prompt = false

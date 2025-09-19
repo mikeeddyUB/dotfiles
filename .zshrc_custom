@@ -1,5 +1,28 @@
-source ~/.alias_zsh
-source ~/.alias_local
+source_if_exists() {
+    local file_path="$1"
+
+    # Check if file path is provided
+    if [[ -z "$file_path" ]]; then
+        echo "Error: No file path provided" >&2
+        return 1
+    fi
+
+    # Check if file exists and is readable
+    if [[ -f "$file_path" && -r "$file_path" ]]; then
+        # echo "Sourcing file: $file_path"
+        source "$file_path"
+        return 0
+    else
+        echo "File does not exist or is not readable: $file_path" >&2
+        return 1
+    fi
+}
+
+source_if_exists ~/.alias_zsh
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    source_if_exists ~/.alias_mac
+fi
+source_if_exists ~/.alias_local
 
 # query for all files in the home directory that start with .alias_* and arent .alias_zsh?
 
@@ -9,4 +32,17 @@ export NVM_LAZY_LOAD=true
 export NVM_DIR="$HOME/.nvm"
 export NVM_COMPLETION=true
 
+source <(kubectl completion zsh)
+
+source <(helmfile completion zsh)
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+export TANIUM_ALLOW_INSECURE_CLIENT="true"
+
+# for terminal history
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
 
