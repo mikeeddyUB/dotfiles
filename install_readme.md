@@ -2,7 +2,12 @@ Download chrome
 Remove excess icons from dock
 Log in to chrome
 Download VPN installer (https://drive.google.com/drive/folders/117xBeEqGUo3E3afCz1vY8Q2FcNsZVL8z)
-Download iterm (https://iterm2.com/downloads.html)
+Download iterm2
+- https://iterm2.com/downloads.html
+- set up key repeat
+- set up natural
+  - iterm2 -> settings -> profiles -> keys -> key bindings -> presets -> natural text editing
+
 Install home-brew (/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”)
 Add /opt/homebrew/bin to PATH
 Brew install git (/opt/homebrew/bin/brew install git)
@@ -24,6 +29,7 @@ brew install diffmerge
 —— add git-lfs to path?
 
 Install oh-my-zsh
+ - sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 Add zsh-autosuggestions plugin
  - git clone https://github.com/lukechilds/zsh-nvm.git ~/.oh-my-zsh/custom/plugins/zsh-nvm
  - git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
