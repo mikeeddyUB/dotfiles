@@ -1,6 +1,7 @@
 [alias]
 	ass = add
 	co = checkout
+	s = status
 	st = status -s
 	stu = status -uno
 	ull = pull
