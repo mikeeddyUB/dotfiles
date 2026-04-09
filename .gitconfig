@@ -47,7 +47,6 @@
         ru = "!git restore"
         blam = "!f() { echo $'     _.-^^---....,,--       \n _--                  --_  \n<                        >)\n|                         | \n \\._                   _./  \n    ```--. . , : .--\\'\\'\\'       \n          | |   |             \n       .-=||  | |=-.   \n       `-#$%&%$#=-\\'   \n          | ;  :|     \n _____.,-#%&$@%#&#~,._____'; }; f"
 
-
 [color]
 	diff = auto
 	status = auto
@@ -81,7 +80,7 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 [push]
-	default = current
+	autoSetupRemote = true
 [init]
 	defaultBranch = main
 [core]
