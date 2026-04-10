@@ -65,6 +65,8 @@ copy over vscode shortcuts
 configure git globally
  - git config --global user.email "michael.eddy@tanium.com"
  - git config --global user.name "Michael Eddy"
+ - git config --global push.autoSetupRemote true
+ - git config --global --replace-all core.pager "less -iXFR"
 
 set up ssh config for daily labs
 set infinite scrollback for iterm
