@@ -43,13 +43,13 @@ export NVM_LAZY_LOAD=true
 export NVM_DIR="$HOME/.nvm"
 export NVM_COMPLETION=true
 
-source <(kubectl completion zsh)
+command -v kubectl &>/dev/null && source <(kubectl completion zsh)
 
-source <(helmfile completion zsh)
+command -v helmfile &>/dev/null &&source <(helmfile completion zsh)
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - zsh)"
+command -v pyenv &>/dev/null && eval "$(pyenv init - zsh)"
 
 export TANIUM_ALLOW_INSECURE_CLIENT="true"
 
