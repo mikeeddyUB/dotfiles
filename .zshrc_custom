@@ -1,3 +1,10 @@
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+
 source_if_exists() {
     local file_path="$1"
 
@@ -17,6 +24,10 @@ source_if_exists() {
         return 1
     fi
 }
+pathadd "/usr/bin"
+pathadd "/bin"
+pathadd "/usr/sbin"
+pathadd "/sbin"
 
 source_if_exists ~/.alias_zsh
 if [[ "$(uname -s)" == "Darwin" ]]; then
