@@ -129,6 +129,7 @@
     }
   },
   "Visual Bell" : true,
+  "Only The Default BG Color Uses Transparency" : false,
   "Cursor Text Color" : {
     "Red Component" : 1,
     "Color Space" : "sRGB",
@@ -174,7 +175,7 @@
   },
   "Silence Bell" : false,
   "Rows" : 25,
-  "Guid" : "56D96B77-AFC2-4890-9043-9F8D3B144D0E",
+  "Guid" : "E84D0DD9-1C1C-4448-990D-6F2025689623",
   "Ansi 14 Color (Dark)" : {
     "Red Component" : 0.37597531080245972,
     "Color Space" : "sRGB",
@@ -269,6 +270,7 @@
     "Green Component" : 0.84313726425170898
   },
   "Default Bookmark" : "No",
+  "Timestamps Visible" : true,
   "Foreground Color (Light)" : {
     "Red Component" : 0.062745098039215685,
     "Color Space" : "sRGB",
@@ -299,6 +301,7 @@
     "Green Component" : 0.99263292551040649
   },
   "Flashing Bell" : false,
+  "Show Status Bar" : false,
   "Use Italic Font" : true,
   "Ansi 13 Color (Dark)" : {
     "Red Component" : 0.8821563720703125,
@@ -367,7 +370,7 @@
     "Green Component" : 0.23660069704055786
   },
   "Name" : "Default",
-  "Transparency" : 0,
+  "Transparency" : 0.099999999999999964,
   "Horizontal Spacing" : 1,
   "Cursor Color (Dark)" : {
     "Red Component" : 0.99997633695602417,
@@ -494,7 +497,7 @@
     "Green Component" : 0.77217715978622437
   },
   "Custom Directory" : "No",
-  "Working Directory" : "\/Users\/michaeleddy",
+  "Working Directory" : "\/Users\/michael.eddy",
   "ASCII Anti Aliased" : true,
   "Shortcut" : "",
   "Mouse Reporting" : true,
@@ -516,7 +519,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.23660069704055786
   },
-  "Use Bold Font" : true,
+  "Timestamps Style" : 2,
   "Ansi 8 Color (Light)" : {
     "Red Component" : 0.40781760215759277,
     "Color Space" : "sRGB",
@@ -531,8 +534,9 @@
     "Alpha Component" : 1,
     "Green Component" : 0.7607843279838562
   },
+  "Use Bold Font" : true,
+  "Unlimited Scrollback" : true,
   "Normal Font" : "Monaco 12",
-  "Unlimited Scrollback" : false,
   "Ansi 12 Color (Light)" : {
     "Red Component" : 0.65349078178405762,
     "Color Space" : "sRGB",
