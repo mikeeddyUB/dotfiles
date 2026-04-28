@@ -1,0 +1,62 @@
+{
+  "editor.minimap.enabled": false,
+  "security.workspace.trust.banner": "always",
+  "json.schemaDownload.enable": true,
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "renovate.json"
+      ],
+      "url": "https://docs.renovatebot.com/renovate-schema.json"
+    }
+  ],
+  "json5.schemaDownload.enable": true,
+  "json5.schemas": [
+    {
+      "fileMatch": [
+        "*.json5"
+      ],
+      "url": "https://docs.renovatebot.com/renovate-schema.json"
+    }
+  ],
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/*.js": {
+      "when": "$(basename).ts"
+    },
+    "**/bazel-*": true,
+    "**/CVS": true,
+    "**/testdata/*": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.associations": {
+    "src/content/includes/*.lnk": "xml"
+  },
+  "plantuml.render": "PlantUMLServer",
+  "plantuml.server": "https://plantuml.corp.tanium.com",
+  "gitlens.remotes": [
+    {
+      "domain": "git.corp.tanium.com",
+      "type": "GitHub"
+    }
+  ],
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+}
