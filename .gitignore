@@ -8,7 +8,9 @@
 !.alias_zsh
 !.gitconfig
 !.sqliterc
-!.vscode/*
+!.vscode/
+!.vscode/settings.json
+!.vscode/keybindings.json
 !.vimrc
 !.alias_mac
 
