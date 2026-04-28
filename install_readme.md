@@ -76,4 +76,7 @@ copy over repl config file
 add in vscode plugins
 
 
+set up vscode config files
+- `cd ~/Library/Application Support/Code/User && ln -s ~/.vscode/keybindings.json`
+- `cd ~/Library/Application Support/Code/User && ln -s ~/.vscode/settings.json`
 
