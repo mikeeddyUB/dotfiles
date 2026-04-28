@@ -2,6 +2,16 @@
   "editor.minimap.enabled": false,
   "security.workspace.trust.banner": "always",
   "json.schemaDownload.enable": true,
+  "json.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://biomejs.dev": true
+  },
   "json.schemas": [
     {
       "fileMatch": [
@@ -11,6 +21,16 @@
     }
   ],
   "json5.schemaDownload.enable": true,
+  "json5.schemaDownload.trustedDomains": {
+    "https://schemastore.azurewebsites.net/": true,
+    "https://raw.githubusercontent.com/microsoft/vscode/": true,
+    "https://raw.githubusercontent.com/devcontainers/spec/": true,
+    "https://www.schemastore.org/": true,
+    "https://json.schemastore.org/": true,
+    "https://json-schema.org/": true,
+    "https://developer.microsoft.com/json-schemas/": true,
+    "https://biomejs.dev": true
+  },
   "json5.schemas": [
     {
       "fileMatch": [
@@ -58,5 +78,5 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "biomejs.biome"
-  },
+  }
 }
