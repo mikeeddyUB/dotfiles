@@ -24,6 +24,17 @@
 
 - Test behavior, not implementation details.
 
+## GitHub CLI
+
+- Always use `gh api -X GET <endpoint>` (explicit `-X GET`) instead of `gh api <endpoint>` for read-only GitHub API calls.
+
+## Node REPL (`~/dev/node-repl`)
+
+When giving commands for lab troubleshooting or API calls against a Tanium server, prefer the node-repl format over curl. When writing commands to be run in the node-repl:
+- No `const`, `let`, or `var`
+- No destructuring
+- Keep each function call on a single line (multi-line formatting breaks in the Claude CLI)
+
 ## GitHub Actions
 
 - Never use or suggest `actions/cache` — it is disabled in our GitHub Enterprise environment.

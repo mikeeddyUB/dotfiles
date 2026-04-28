@@ -4,7 +4,9 @@
 # need a way to append to PATH if its not there already
 
 # Ensure core system utilities (tr, sed, etc.) are always available
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+# export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+
+_zsh_nvm_load() {}  # no-op to suppress "command not found" in non-interactive shells
 
 source ~/.zshrc_custom
 
@@ -119,3 +121,8 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[yellow]%})"
 # ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 # ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 # ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
+# >>> tanium-eng rc >>>
+export PATH="/Users/michael.eddy/.local/bin:$PATH"
+eval "$(tanium-eng eval zsh)"
+# <<< tanium-eng rc <<<

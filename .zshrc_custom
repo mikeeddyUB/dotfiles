@@ -24,10 +24,15 @@ source_if_exists() {
         return 1
     fi
 }
+
+pathadd "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+pathadd "$HOME/.local/bin"
 pathadd "/usr/bin"
 pathadd "/bin"
 pathadd "/usr/sbin"
 pathadd "/sbin"
+
+source_if_exists ~/.zshrc_local
 
 source_if_exists ~/.alias_zsh
 if [[ "$(uname -s)" == "Darwin" ]]; then
@@ -45,7 +50,7 @@ export NVM_COMPLETION=true
 
 command -v kubectl &>/dev/null && source <(kubectl completion zsh)
 
-command -v helmfile &>/dev/null &&source <(helmfile completion zsh)
+command -v helmfile &>/dev/null && source <(helmfile completion zsh)
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
